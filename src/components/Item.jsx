@@ -5,11 +5,8 @@ const Item = ({image, names, new_price, old_price, id}) => {
 		<div className="hover:transition-[1s]">
 			<div className="w-[290px] hover:scale-[1.05] hover:transition-[1s]">
 				<Link to={`/product/${id}`}>
-<<<<<<< HEAD
 					<img src={image} alt="" onClick={window.scrollTo(0,0)}/>
-=======
 					<img src={image} alt="" />
->>>>>>> fa23e4a6a6c44b6a7e616e23eb107e3452681419
 				</Link>
 				<p className="my-[6px] mx-0">{names}</p>
 				<div className="flex gap-[20px]">

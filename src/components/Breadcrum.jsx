@@ -9,7 +9,6 @@ const Breadcrum = (product) => {
 	const {addToCart} = useContext(ShopContext)
 
 	return (
-<<<<<<< HEAD
 		<div className="flex flex-col gap-12  my-12 mx-32">
 			<div className="flex items-center gap-3 text-[#5e5e5e] text-base font-semibold capitalize">
 				Home <img src={arrow_icon} alt="" />
@@ -53,7 +52,7 @@ const Breadcrum = (product) => {
 						<button className="py-5 px-10 w-40 h-14 flex items-center text-base font-semibold bg-[#fbfbfb] border-[1px] border-[#ebebeb] rounded-sm] mb-10">Reviews</button>
 						</div>
 					  
-						<div className="text-sm font-semibold py-4 px-6 bg-[#fbfbfb] border-[1px] border-[#ebebeb] rounded-sm py-4 px-6">
+						<div className="text-sm font-semibold py-4 px-6 bg-[#fbfbfb] border-[1px] border-[#ebebeb] rounded-sm">
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio quibusdam quasi quia praesentium commodi, ratione obcaecati optio aperiam quo magni doloribus rem id, harum amet facere neque! Non, omnis a?
 						</div>
 						<div className="">
@@ -71,16 +70,15 @@ const Breadcrum = (product) => {
 				</div>
 				
 			</div>
-=======
-		<div className="">
-			HOME <img src={product.product.image} alt="" /> SHOP{" "}
-			<img src={arrow_icon} alt="" /> {product.product.category}{" "}
-			<img src={arrow_icon} alt="" /> {product.product.name}{" "}
-			<img src={arrow_icon} alt="" />
->>>>>>> fa23e4a6a6c44b6a7e616e23eb107e3452681419
+			<div className="">
+				HOME <img src={product.product.image} alt="" /> SHOP{" "}
+				<img src={arrow_icon} alt="" /> {product.product.category}{" "}
+				<img src={arrow_icon} alt="" /> {product.product.name}{" "}
+				<img src={arrow_icon} alt="" />
+			</div>
 		</div>
-	);
-};
+	)
+}
 
 export default Breadcrum;
 
