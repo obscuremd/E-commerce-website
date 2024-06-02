@@ -7,7 +7,7 @@ import Popular from "../components/Popular"
 
 const Shop = () => {
   return (
-    <div className="max-w-screen">
+    <div className="max-w-screen flex flex-col gap-5">
       <Hero/>
       <Popular/>
       <Offers/>

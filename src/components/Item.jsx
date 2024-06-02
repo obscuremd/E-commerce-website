@@ -28,12 +28,12 @@ const Item = ({image, names, new_price, old_price, id}) => {
 
 	return (
 		<div className="hover:transition-[1s]">
-			<div className="w-[290px] hover:scale-[1.05] hover:transition-[1s]">
+			<div className="md:w-[290px] w-[150px] hover:scale-[1.05] hover:transition-[1s]">
 				<Link to={`/product/${id}`}>
 					<img src={image} alt="" onClick={window.scrollTo(0,0)}/>
 				</Link>
-				<p className="my-[6px] mx-0">{names}</p>
-				<div className="flex justify-between">
+				<p className=" truncate">{names}</p>
+				<div className="flex flex-col gap-5">
 
 					<div className="flex gap-[20px]">
 						<div className="text-[#374151] text-[18px] font-semibold">
