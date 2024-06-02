@@ -51,11 +51,14 @@ const Navbar = () => {
             </div>
         </div>
         { isMobile && mobileMenu &&
-                <ul className='flex flex-col items-center gap-[20px] md:gap-[50px] text-[#626262] text-[15px] md:text-[15px] font-medium'>
+                <ul className='flex flex-col items-center gap-[20px] md:gap-[50px] text-[#626262] text-[15px] md:text-[15px] font-medium py-4'>
                     <li onClick={()=>{setMenu(1)}} id='nav'><Link to='/'>SHOP</Link> {menu === 1 ? <hr/>: <></>}</li>
                     <li onClick={()=>{setMenu(2)}} id='nav'><Link to='/mens'>MENS</Link> {menu === 2 ? <hr/>: <></>}</li>
                     <li onClick={()=>{setMenu(3)}} id='nav'><Link to='/women'>WOMEN</Link> {menu === 3 ? <hr/>: <></>}</li>
                     <li onClick={()=>{setMenu(4)}} id='nav'><Link to='/kids'>KIDS</Link> {menu === 4 ? <hr/>: <></>}</li>
+                    <Link to='/login'>
+                        <button className=' py-2 px-5 text-base font-medium rounded-[75px] border-[2px] border-emerald-800' id='button'>Log-in</button>
+                    </Link>
                 </ul>
         }
     </div>

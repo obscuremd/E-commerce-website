@@ -11,7 +11,7 @@ const Footer = () => {
         <img src={footer} alt="" />
         <p className='text-[#383838] font-semibold text-[46px]'>SHOPPER</p>
       </div>
-      <ul className='flex gap-[50px] text-[#252525] font-semibold text-[20px] '>
+      <ul className='w-full flex justify-between md:px-52 px-5 text-[#252525] font-semibold md:text-[20px] '>
         <li className='cursor-pointer '>Company</li>
         <li className='cursor-pointer '>Products</li>
         <li className='cursor-pointer '>Offices</li>
@@ -29,7 +29,7 @@ const Footer = () => {
             <img src={whatsapp} alt="" />
         </div>
     </div>
-        <div className='flex flex-col items-center gap-[30px] w-full mb-[30px] text-[#1a1a1a] text-[20px]'>
+        <div className='flex flex-col items-center gap-[30px] w-full mb-[30px] text-[#1a1a1a] md:text-[20px]'>
             <hr className='w-[80%] rounded-[12px] h-[3px] border-none bg-[#c7c7c7]' />
             <p>Copyright @ 2023 - All Rights Reserved</p>
         </div>
