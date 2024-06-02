@@ -1,10 +1,17 @@
 import React, { useContext } from 'react'
-import { ShopContext } from '../context/ShopContext'
-import remove from '../assets/cart_cross_icon.png'
+import { useRecoilState} from 'recoil'
+import { CartState } from '../atoms/CartState'
 
 
 const CartItem = () => {
-    const{all_product, cartItem, removeFromCart} = useContext(ShopContext)
+    const [cart , setCart] = useRecoilState(CartState)
+
+    console.log(cart)
+
+    const handleRemove = (id) => {
+      setCart((prevCart) => prevCart.filter(item => item.id !== id));
+  };
+
   return (
     <div className='my-24 mx-44'>
       <div className='grid grid-cols-[0.5fr,2fr,1fr,1fr,1fr,1fr] items-center gap-20 py-20 text-[#454545] text-lg font-semibold'>
@@ -16,24 +23,21 @@ const CartItem = () => {
         <p>Remove</p>
       </div>
       <hr className='h-1 border-none bg-[#e2e2e2]'/>
-      {all_product.map((e) => {
-        if (cartItem[e.id] > 0) {
-        return (
-            <div key={e.id}>
-                <div>
-                    <img src={e.image} alt="" className='' />
-                    <p>{e.name}</p>
-                    <p>${e.new_price}</p>
-                    <button className=''>{cartItem[e.id]}</button>
-                    <p>{e.new_price * cartItem[e.id]}</p>
-                    <img src={remove} alt="" onClick={() => { removeFromCart(e.id) }} />
-                </div>
-                <hr />
-            </div>
-        );
-    }
-    return null; // Important to return null for elements you don't want to render
-})}
+
+      {cart.map((item, index) =>(
+        <div key={index}>
+          <div  className='grid grid-cols-[0.5fr,2fr,1fr,1fr,1fr,1fr] items-center gap-20 py-10 text-[#454545] text-lg font-semibold'>
+            <img src={item.image} alt="" className='w-40' />
+            <p className='truncate'>{item.name}</p>
+            <p>{item.new_price}</p>
+            <p>{item.quantity}</p>
+            <p>{item.quantity * item.new_price}</p>
+            <button className='text-[#D83936]' onClick={()=>handleRemove(item.id)}>Remove</button>
+          </div>
+            <hr className='h-1 border-none bg-[#e2e2e2]'/>
+        </div>
+      ))}
+      
     </div>
   )
 }

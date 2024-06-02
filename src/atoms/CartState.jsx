@@ -1,10 +1,6 @@
-import { atom, selector } from "recoil";
+import { atom } from "recoil";
 
 export const CartState = atom({
     key: 'cart',
     default: []
-})
-
-export const AddToCart = selector({
-    
 })

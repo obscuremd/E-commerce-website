@@ -12,6 +12,7 @@ import kid_banner from "../src/assets/banner_kids.png";
 import ShopContextProvider from "./context/ShopContext";
 
 const App = () => {
+
 	return (
 		<div>
 			<ShopContextProvider>

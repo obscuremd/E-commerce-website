@@ -3,10 +3,14 @@ import cart_icon from '../assets/cart_icon.png'
 import './Navbar.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useRecoilValue } from 'recoil'
+import { CartState } from '../atoms/CartState'
 
 
 
 const Navbar = () => {
+
+    const CartNumber = useRecoilValue(CartState)
 
     const [menu, setMenu] = useState(0)
     
@@ -34,7 +38,7 @@ const Navbar = () => {
                 <img src={cart_icon} alt="" className='w-[15px] md:w-[30px]'/>
             </Link>  
                 
-                <div className='w-[10px] h-[10px] md:w-[22px] md:h-[22px] bg-red-400 flex justify-center items-center mt-[-35px] ml-[-55px] rounded-[11px] text-[5px] md:text-base text-white'>0</div>
+                <div className='w-[10px] h-[10px] md:w-[22px] md:h-[22px] bg-red-400 flex justify-center items-center mt-[-35px] ml-[-55px] rounded-[11px] text-[5px] md:text-base text-white'>{CartNumber.length}</div>
         </div>
 
     </div>
