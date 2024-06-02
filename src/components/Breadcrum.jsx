@@ -19,13 +19,13 @@ const Breadcrum = (product) => {
 			<div className="flex my-0 ">
 				<div className="flex gap-4">
 					<div className="flex flex-col gap-4">
-						<img src={product.product.image} alt="" className="w-[440px]"/>
+						<img src={product.product.image} alt="" className=""/>
 						<img src={product.product.image} alt="" />
 						<img src={product.product.image} alt="" />
 						<img src={product.product.image} alt="" />
 					</div>
 					<div>
-						<img src={product.product.image} alt="" className="w-[1700px] h-[95vh]"/>
+						<img src={product.product.image} alt="" className="w-[1700px]"/>
 					</div>
 				</div>
 				<div className="mx-16 flex flex-col">
@@ -69,12 +69,6 @@ const Breadcrum = (product) => {
 					</div>
 				</div>
 				
-			</div>
-			<div className="">
-				HOME <img src={product.product.image} alt="" /> SHOP{" "}
-				<img src={arrow_icon} alt="" /> {product.product.category}{" "}
-				<img src={arrow_icon} alt="" /> {product.product.name}{" "}
-				<img src={arrow_icon} alt="" />
 			</div>
 		</div>
 	)
