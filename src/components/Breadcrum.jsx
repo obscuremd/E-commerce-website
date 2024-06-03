@@ -25,27 +25,27 @@ const Breadcrum = (product) => {
     };
 
 	return (
-		<div className="flex flex-col gap-12  my-12 mx-32">
+		<div className="flex flex-col gap-12  md:my-12 md:mx-32">
 			<div className="flex items-center gap-3 text-[#5e5e5e] text-base font-semibold capitalize">
 				Home <img src={arrow_icon} alt="" />
 				Shop <img src={arrow_icon} alt="" />
 				{product.product.category}{" "} <img src={arrow_icon} alt="" />
 				{product.product.name}{" "} <img src={arrow_icon} alt="" />
 			</div>
-			<div className="flex my-0 ">
-				<div className="flex gap-4">
-					<div className="flex flex-col gap-4">
-						<img src={product.product.image} alt="" className=""/>
-						<img src={product.product.image} alt="" />
-						<img src={product.product.image} alt="" />
-						<img src={product.product.image} alt="" />
+			<div className="flex flex-col md:flex-row gap-10">
+				<div className="flex gap-4 flex-col-reverse md:flex-row">
+					<div className="flex flex-row md:flex-col gap-4">
+						<img src={product.product.image} alt="" className="w-20 md:w-[15vw] rounded-lg"/>
+						<img src={product.product.image} alt="" className="w-20 md:w-[15vw] rounded-lg"/>
+						<img src={product.product.image} alt="" className="w-20 md:w-[15vw] rounded-lg"/>
+						<img src={product.product.image} alt="" className="w-20 md:w-[15vw] rounded-lg"/>
 					</div>
 					<div>
-						<img src={product.product.image} alt="" className="w-[1700px]"/>
+						<img src={product.product.image} alt="" className="md:w-[70vw] rounded-lg"/>
 					</div>
 				</div>
-				<div className="mx-16 flex flex-col">
-					<h1 className="text-[#3d3d3d] text-4xl font-bold">{product.product.name}</h1>
+				<div className=" flex flex-col px-10 items-center justify-center">
+					<h1 className="text-[#3d3d3d] md:text-4xl font-bold text-center">{product.product.name}</h1>
 					<div className="flex items-center mt-3 gap-1 text-[#1c1c1c] text-base">
 						<img src={star} alt="" />
 						<img src={star} alt="" />

@@ -1,8 +1,17 @@
 import {Link} from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { CartState } from "../atoms/CartState";
+import {
+	Card,
+	CardHeader,
+	CardBody,
+	CardFooter,
+	Typography,
+	Button,
+  } from "@material-tailwind/react";
+import { motion } from "framer-motion";
 
-const Item = ({image, names, new_price, old_price, id}) => {
+const Item = ({image, names, new_price, old_price, id, description}) => {
 
 	const [cart, setCart]=useRecoilState(CartState)
 
@@ -27,10 +36,15 @@ const Item = ({image, names, new_price, old_price, id}) => {
     };
 
 	return (
-		<div className="hover:transition-[1s]">
-			<div className="md:w-[290px] w-[150px] hover:scale-[1.05] hover:transition-[1s]">
+		<motion.div whileHover={{scale:1.05}}>
+			<Card className="md:w-[290px] w-[150px] p-2">
 				<Link to={`/product/${id}`}>
-					<img src={image} alt="" onClick={window.scrollTo(0,0)}/>
+					<img 
+						src={image} 
+						alt="" 
+						className="rounded-lg"
+						// onClick={window.scrollTo(0,0)}
+						/>
 				</Link>
 				<p className=" truncate">{names}</p>
 				<div className="flex flex-col gap-5">
@@ -44,10 +58,54 @@ const Item = ({image, names, new_price, old_price, id}) => {
 						</div>
 					</div>
 
-					<button onClick={()=>addToCart(product)} className="p-2 rounded-lg text-white font-semibold bg-[#d83936cb]">Add To Cart</button>
+					<Button
+					onClick={()=>addToCart(product)}
+					ripple={false}
+					fullWidth={true}
+					className="bg-pink-200 text-white shadow-none "
+					>
+					Add to Cart
+					</Button>
 				</div>
-			</div>
-		</div>
+			</Card>
+		</motion.div>
+		
+	// 	<Card className="md:w-96">
+	// 	<CardHeader shadow={false} floated={false} className="h-96">
+	// 		<img
+	// 		src={image}
+	// 		alt="card-image"
+	// 		className="h-full w-full object-cover"
+	// 		/>
+	// 	</CardHeader>
+	// 	<CardBody>
+	// 		<div className="mb-2 flex items-center justify-between">
+	// 		<Typography color="blue-gray" className="font-medium truncate w-[10em]">
+	// 			{names}
+	// 		</Typography>
+	// 		<Typography color="blue-gray" className="font-medium">
+	// 			${new_price}.00
+	// 		</Typography>
+	// 		</div>
+	// 		<Typography
+	// 		variant="small"
+	// 		color="gray"
+	// 		className="font-normal opacity-75"
+	// 		>
+	// 		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate fugiat aut iusto Voluptate fugiat aut
+	// 		</Typography>
+	// 	</CardBody>
+	// 	<CardFooter className="pt-0">
+	// 		<Button
+	// 		onClick={()=>addToCart(product)}
+	// 		ripple={false}
+	// 		fullWidth={true}
+	// 		className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+	// 		>
+	// 		Add to Cart
+	// 		</Button>
+	// 	</CardFooter>
+    // </Card>
 	);
 };
 
