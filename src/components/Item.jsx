@@ -62,7 +62,7 @@ const Item = ({image, names, new_price, old_price, id, description}) => {
 					onClick={()=>addToCart(product)}
 					ripple={false}
 					fullWidth={true}
-					className="bg-pink-200 text-white shadow-none "
+					className="bg-[#ff4141] text-white shadow-none "
 					>
 					Add to Cart
 					</Button>

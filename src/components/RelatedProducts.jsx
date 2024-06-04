@@ -4,10 +4,10 @@ import Item from './Item'
 
 const RelatedProducts = (product) => {
   return (
-    <div className='flex flex-col items-center gap-3 h[90vh]'>
-      <h1 className='text-[#171717] text-5xl font-semibold'>Related Products</h1>
+    <div className='flex flex-col items-center gap-3 w-full'>
+      <h1 className='text-[#171717] md:text-5xl text-xl font-semibold'>Related Products</h1>
       <hr className='w-52 h-2 rounded-xl border-none bg-[#252525]'/>
-      <div className='mt-12 flex gap-7'>
+      <div className='mt-12 flex flex-wrap w-full items-center justify-center gap-7'>
         {Data_product.map((item, index)=>(
              
              <Item
