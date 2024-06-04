@@ -1,6 +1,10 @@
 import React, { useContext } from 'react'
 import { useRecoilState} from 'recoil'
 import { CartState } from '../atoms/CartState'
+import { Avatar, Card, List, ListItem, ListItemPrefix, Typography } from '@material-tailwind/react'
+import { TrashIcon } from '@heroicons/react/16/solid'
+
+
 
 
 const CartItem = () => {
@@ -13,30 +17,61 @@ const CartItem = () => {
   };
 
   return (
-    <div className='my-24 mx-44'>
-      <div className='grid grid-cols-[0.5fr,2fr,1fr,1fr,1fr,1fr] items-center gap-20 py-20 text-[#454545] text-lg font-semibold'>
-        <p>Products</p>
-        <p>Title</p>
-        <p>Price</p>
-        <p>Quantity</p>
-        <p>Total</p>
-        <p>Remove</p>
-      </div>
-      <hr className='h-1 border-none bg-[#e2e2e2]'/>
+    <div className='md:py-24 md:px-44'>
 
+      <List className='w-full' >
+              <ListItem className='justify-between md:py-10' >
+                <ListItemPrefix>
+                  <Typography variant="h6" color="blue-gray" className='md:w-[10em] truncate'>
+                    Products
+                  </Typography>
+                </ListItemPrefix>
+                  <Typography variant="h6" color="blue-gray" className='md:w-[10em] truncate'>
+                  Title
+                  </Typography>
+                  <Typography variant="h6" color="blue-gray" className="md:w-[10em]">
+                  Price
+                  </Typography>
+                  <Typography variant="h6" color="blue-gray" className="md:w-[10em]">
+                  Quantity
+                  </Typography>
+                  <Typography variant="h6" color="blue-gray" className='md:w-[10em] truncate'>
+                  Total
+                  </Typography>
+                  <Typography variant="h6" color="blue-gray" className=' truncate'>
+                  Remove
+                  </Typography>
+              </ListItem>
+              <hr className='h-1 border-none bg-[#e2e2e2]'/>
+            </List>
+
+    <Card className="w-full">
       {cart.map((item, index) =>(
-        <div key={index}>
-          <div  className='grid grid-cols-[0.5fr,2fr,1fr,1fr,1fr,1fr] items-center gap-20 py-10 text-[#454545] text-lg font-semibold'>
-            <img src={item.image} alt="" className='w-40' />
-            <p className='truncate'>{item.name}</p>
-            <p>{item.new_price}</p>
-            <p>{item.quantity}</p>
-            <p>{item.quantity * item.new_price}</p>
-            <button className='text-[#D83936]' onClick={()=>handleRemove(item.id)}>Remove</button>
-          </div>
-            <hr className='h-1 border-none bg-[#e2e2e2]'/>
-        </div>
-      ))}
+            <List key={index}>
+              <ListItem className='justify-between'>
+                <ListItemPrefix>
+                  <Avatar variant="circular" alt="candice" src={item.image} />
+                </ListItemPrefix>
+                  <Typography variant="h6" color="blue-gray" className='w-[10em] truncate'>
+                  {item.name}
+                  </Typography>
+                  <Typography variant="small" color="gray" className="font-normal">
+                    ${item.new_price}
+                  </Typography>
+                  <Typography variant="small" color="gray" className="font-normal">
+                  {item.quantity}
+                  </Typography>
+                  <Typography variant="h6" color="blue-gray" className='w-[10em] truncate'>
+                  ${item.quantity * item.new_price}
+                  </Typography>
+                  <button onClick={()=>handleRemove(item.id)}>
+                    <TrashIcon className='size-5 hover:text-red-300'/>
+                  </button>
+              </ListItem>
+              
+            </List>
+        ))}
+    </Card>
       
     </div>
   )
